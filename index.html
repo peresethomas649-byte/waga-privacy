@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAGA — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #0b0c10;
+    --panel: #14161d;
+    --text: #e8e9ec;
+    --muted: #a3a8b3;
+    --accent: #7aa2ff;
+    --rule: #25272f;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 40px 0 12px;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 16px;
+    margin: 24px 0 8px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  p, ul {
+    color: var(--text);
+    margin: 0 0 14px;
+  }
+  ul {
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  strong {
+    color: var(--text);
+  }
+  .callout {
+    background: var(--panel);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>WAGA — Privacy Policy</h1>
+  <p class="meta">World Art Generator App for Apple Vision Pro<br>
+  <strong>Effective date:</strong> 7 June 2026</p>
+</header>
+
+<p>WAGA (the "App") is a visionOS application that generates immersive 3D worlds and 3D objects from text prompts and photos you provide. Your privacy is fundamental to how WAGA is built. This policy explains, in plain language, what data the App handles, what it does not handle, and your rights.</p>
+
+<div class="callout">
+<strong>The short version:</strong> WAGA does not require an account, does not collect your name or email, does not include any analytics, advertising, or tracking SDKs, and does not store your photos or generated content on any server. Almost everything happens on your device.
+</div>
+
+<h2>1. Data we collect</h2>
+<p>WAGA collects only what is technically necessary to generate your worlds and objects. Specifically:</p>
+
+<h3>1.1 Text prompts you type</h3>
+<p>When you tap "Generate," the text prompt you wrote is sent to our backend (a Cloudflare Worker), which then forwards it to the AI image and 3D model providers listed in Section 3. Prompts are processed in real time and are not stored, logged with identifying information, or retained beyond what is needed to return the generated result.</p>
+
+<h3>1.2 Photos you select (only when you choose to)</h3>
+<p>If you choose to generate a 3D object from a photo, the App requests access to your photo library so you can pick a single image. The selected image is uploaded to our Cloudflare Worker, forwarded to Replicate for 3D generation, and then discarded. <strong>WAGA does not retain your photos on any server, does not access photos you have not explicitly picked, and does not scan your photo library.</strong></p>
+<p>You can revoke photo library access at any time in <em>Settings → WAGA → Photos</em> on your Apple Vision Pro.</p>
+
+<h3>1.3 Device integrity tokens (App Attest)</h3>
+<p>Before sending requests to our backend, the App uses Apple's <strong>App Attest</strong> framework to generate a cryptographic token that proves the request is coming from a legitimate copy of WAGA running on a genuine Apple device. This token is anonymous — it contains no personal information, no Apple ID, no name, and no email. It cannot be used to identify you or track you across apps. Its sole purpose is to prevent fraud and abuse of our backend.</p>
+
+<h2>2. Data we do <em>not</em> collect</h2>
+<p>WAGA does not collect, request, or transmit any of the following:</p>
+<ul>
+  <li>Your name, email address, phone number, or any user-account information (the App has no login or sign-up)</li>
+  <li>Your location, IP address (beyond what Cloudflare may briefly process for rate limiting; see Section 3)</li>
+  <li>Your Apple ID, iCloud information, or contacts</li>
+  <li>Your photo library contents (only photos you explicitly pick are uploaded, and only for the duration of one generation request)</li>
+  <li>Payment or billing information (handled entirely by Apple — see Section 4)</li>
+  <li>Browsing history, advertising identifiers (IDFA), or device fingerprints</li>
+  <li>Analytics events, screen-view tracking, crash reports tied to identifiable users, or any third-party analytics SDK data</li>
+</ul>
+<p>WAGA contains <strong>no</strong> advertising SDKs, <strong>no</strong> analytics SDKs (such as Google Analytics, Firebase, Amplitude, Mixpanel), and <strong>no</strong> social-media tracking pixels.</p>
+
+<h2>3. Third-party services we use</h2>
+<p>WAGA's generative features depend on a small number of third-party services. Each is used for one specific technical purpose, with the minimum data necessary, and never receives identifying information about you.</p>
+
+<h3>3.1 Cloudflare (backend proxy and rate limiting)</h3>
+<p>Our backend runs on Cloudflare Workers. Cloudflare may briefly process your IP address to enforce per-IP rate limits and protect against abuse, in line with Cloudflare's standard service operation. We do not log IP addresses, store them, or associate them with any user account (there is no user account). See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's privacy policy</a>.</p>
+
+<h3>3.2 Fal.ai (image generation)</h3>
+<p>Text prompts and panorama-image generation requests are sent to Fal.ai for processing by their hosted AI image model. Fal.ai receives only the prompt text and returns the generated image. See <a href="https://fal.ai/legal/privacy-policy" target="_blank" rel="noopener">Fal.ai's privacy policy</a>.</p>
+
+<h3>3.3 Replicate (3D model and Gaussian Splat generation)</h3>
+<p>For 3D object generation from your photos, the selected image is sent to Replicate, which runs the AI 3D model and returns a 3D file. Replicate receives only the image you selected for that single request. See <a href="https://replicate.com/privacy" target="_blank" rel="noopener">Replicate's privacy policy</a>.</p>
+
+<h3>3.4 World Labs (world generation)</h3>
+<p>For panoramic-image-to-3D-world generation, the panorama is sent to World Labs' Marble API and returned as a 3D scene file. See <a href="https://www.worldlabs.ai/privacy" target="_blank" rel="noopener">World Labs' privacy policy</a>.</p>
+
+<h3>3.5 Apple StoreKit (in-app purchases)</h3>
+<p>Token-pack purchases are processed entirely by Apple via StoreKit and the App Store. <strong>WAGA never sees and never receives your payment card, Apple ID, billing address, or any financial information.</strong> We receive only an anonymous receipt from Apple confirming that a purchase was completed and which product was bought, so we can credit the corresponding tokens to your device. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</p>
+
+<h2>4. In-app purchases</h2>
+<p>WAGA offers consumable in-app purchases ("token packs") that unlock additional generations. All payment processing, billing, refund handling, and subscription management is performed by Apple. WAGA does not store payment information of any kind. Refund requests must be made directly to Apple via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+<h2>5. Where your data lives</h2>
+
+<h3>5.1 On your device</h3>
+<p>Generated worlds, generated 3D objects, your remaining token balance, and your library of saved content are stored locally on your Apple Vision Pro using Apple's SwiftData framework. This data never leaves your device and is not synced to any server.</p>
+
+<h3>5.2 Deleting your data</h3>
+<p>Because WAGA stores everything locally, deleting your data is as simple as deleting the App. Doing so removes all generated content, token balances, and any cached data permanently. There is no server-side account to delete because no server-side account exists.</p>
+
+<h2>6. Children's privacy</h2>
+<p>WAGA is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has used the App in a manner that should be reviewed, please contact us at the email below.</p>
+
+<h2>7. Your rights</h2>
+<p>Because WAGA collects no personal information about you, most data-protection rights (such as the right to access, correct, or delete personal data under the GDPR or CCPA) do not apply in a traditional sense — there is no profile to access or correct. However:</p>
+<ul>
+  <li><strong>Right to delete:</strong> uninstalling the App permanently removes all data WAGA holds about your activity.</li>
+  <li><strong>Right to know:</strong> this policy is the complete disclosure of what data WAGA processes.</li>
+  <li><strong>Right to revoke permissions:</strong> photo library access can be turned off at any time in your device settings.</li>
+  <li><strong>Right to contact us:</strong> for any privacy question, write to the email in Section 9.</li>
+</ul>
+
+<h2>8. Changes to this policy</h2>
+<p>If this policy changes materially, the "Effective date" at the top will be updated and the new policy will be published at this URL. Continued use of the App after that date constitutes acceptance of the updated policy.</p>
+
+<h2>9. Contact</h2>
+<p>If you have any questions about this policy or about how WAGA handles data, please email:</p>
+<p><a href="mailto:peresethomas649@gmail.com">peresethomas649@gmail.com</a></p>
+
+<footer>
+  © 2026 Thomas Perese. WAGA is an independent application and is not affiliated with Apple Inc., Cloudflare Inc., Fal.ai, Replicate, or World Labs.
+</footer>
+
+</main>
+</body>
+</html>
